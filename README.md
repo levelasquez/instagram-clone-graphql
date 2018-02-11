@@ -23,6 +23,11 @@ Used Technologies:
 * Integration with React
 * Graphql client
 
-# Version 1.3.1
+## Version 1.3.1
 * Structure for login and register
-* prepare interaction from the from to the backend
+* Prepare interaction from the front to the backend
+
+## Version 1.3.2
+* Register from client
+* Modified User models, schema and resolvers
+* Eslint integration for client

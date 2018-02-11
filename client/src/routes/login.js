@@ -3,10 +3,13 @@ import {
   Grid,
   Image,
 } from 'semantic-ui-react'
+import { graphql } from 'react-apollo'
 
 import Signin from './login/signin'
 import Signup from './login/signup'
 import LostPassword from './login/lostPassword'
+
+import queries from '../utils/queries'
 
 const styles = {
   grid: {
@@ -23,7 +26,7 @@ const styles = {
   },
 }
 
-export default class Login extends Component {
+export class Login extends Component {
   state = {
     showLogin: true,
     showRegister: false,
@@ -52,6 +55,15 @@ export default class Login extends Component {
 
   handleLogin = (event, args) => {
     console.log({ args })
+  }
+
+  handleRegister = async (event, args) => {
+    console.log({ args })
+    const response = await this.props.mutate({
+      variables: args,
+    })
+
+    console.log({ response })
   }
 
   render() {
@@ -83,6 +95,7 @@ export default class Login extends Component {
               <Signup
                 styles={styles}
                 handleClick={this.showLogin}
+                handleSubmit={this.handleRegister}
               />}
             {showLostPassword && <LostPassword styles={styles} />}
           </Grid.Column>
@@ -91,3 +104,5 @@ export default class Login extends Component {
     )
   }
 }
+
+export default graphql(queries.mutations.createUser)(Login)

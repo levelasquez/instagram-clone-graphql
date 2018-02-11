@@ -1,20 +1,22 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import {
   Divider,
   Form,
   Button,
   Icon,
+  Image,
 } from 'semantic-ui-react'
 
-export default ({ styles, handleClick, handleSubmit }) => {
+const Signin = ({ styles, handleClick, handleSubmit }) => {
   const args = {}
 
-  const handleChange = (event, input) => args[input.name] = input.value
+  const handleChange = (event, input) => { args[input.name] = input.value }
 
   return (
     <div>
       <div style={styles.box}>
-        <img src='images/logo.png' />
+        <Image src='images/logo.png' alt='logo' />
         <Form onSubmit={event => handleSubmit(event, args)}>
           <Form.Field>
             <Form.Input
@@ -56,3 +58,11 @@ export default ({ styles, handleClick, handleSubmit }) => {
     </div>
   )
 }
+
+Signin.propTypes = {
+  styles: PropTypes.object.isRequired,
+  handleClick: PropTypes.func.isRequired,
+  handleSubmit: PropTypes.func.isRequired,
+}
+
+export default Signin
