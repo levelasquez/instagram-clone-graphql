@@ -1,0 +1,30 @@
+{
+  "name": "instagram-clone",
+  "version": "1.0.0",
+  "description": "Instagram Clone using GrahpQL, Apollo, Node, React and MongoDB",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js --exec babel-node"
+  },
+  "keywords": [
+    "instagram",
+    "clone",
+    "graphql",
+    "node",
+    "react",
+    "mongodb",
+    "apollo"
+  ],
+  "author": "Leonardo Velasquez <velasquezleonardo1@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-server-express": "^1.3.2",
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-stage-3": "^6.24.1",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "graphql": "^0.13.0",
+    "graphql-tools": "^2.20.2"
+  }
+}
