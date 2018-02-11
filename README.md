@@ -22,3 +22,7 @@ Used Technologies:
 ## Version 1.3.0
 * Integration with React
 * Graphql client
+
+# Version 1.3.1
+* Structure for login and register
+* prepare interaction from the from to the backend
