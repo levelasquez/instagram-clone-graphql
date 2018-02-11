@@ -13,3 +13,8 @@ Used Technologies:
 * Mongoose integration
 * Create user model
 * Create schema and resolvers for users
+
+## Version 1.2.0
+* Modified users stuff
+* Add posts stuff
+* Reestructure schemas and resolvers

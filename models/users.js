@@ -9,6 +9,25 @@ const userSchema = mongoose.Schema({
   password: {
     type: String,
     required: true,
+  },
+  email: {
+    type: String,
+    required: true,
+  },
+  desc: String,
+  bio: String,
+  thumbnail: String,
+  posts: {
+    type: [],
+    defualt: [],
+  },
+  following: {
+    type: [],
+    default: [],
+  },
+  followers: {
+    type: [],
+    default: [],
   }
 })
 

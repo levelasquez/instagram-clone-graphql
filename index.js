@@ -6,11 +6,19 @@ import {
 } from 'apollo-server-express'
 import { makeExecutableSchema } from 'graphql-tools'
 import mongoose from 'mongoose'
+import path from 'path'
+import {
+  fileLoader,
+  mergeTypes,
+  mergeResolvers,
+} from 'merge-graphql-schemas'
+
 mongoose.Promise = global.Promise
 
-import typeDefs from './schemas'
-import resolvers from './resolvers'
 import models from './models'
+
+const typeDefs = mergeTypes(fileLoader(path.join(__dirname, './types')))
+const resolvers = mergeResolvers(fileLoader(path.join(__dirname, './resolvers')))
 
 const schema = makeExecutableSchema({
   typeDefs,
@@ -22,7 +30,13 @@ const app = express ()
 
 app.use('/graphql', bodyParser.json(), graphqlExpress({
   schema,
-  context: { models },
+  context: {
+    models,
+    user: {
+      _id: 1,
+      username: 'lvelasquez',
+    },
+  },
 }))
 app.use('/graphiql', graphiqlExpress({ endpointURL: '/graphql' }))
 
