@@ -23,6 +23,7 @@
     "babel-preset-env": "^1.6.1",
     "babel-preset-stage-3": "^6.24.1",
     "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
     "express": "^4.16.2",
     "graphql": "^0.13.0",
     "graphql-tools": "^2.20.2",

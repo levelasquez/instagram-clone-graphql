@@ -18,3 +18,7 @@ Used Technologies:
 * Modified users stuff
 * Add posts stuff
 * Reestructure schemas and resolvers
+
+## Version 1.3.0
+* Integration with React
+* Graphql client

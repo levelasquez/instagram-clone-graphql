@@ -12,6 +12,7 @@ import {
   mergeTypes,
   mergeResolvers,
 } from 'merge-graphql-schemas'
+import cors from 'cors'
 
 mongoose.Promise = global.Promise
 
@@ -28,6 +29,7 @@ const PORT = 3000
 
 const app = express ()
 
+app.use(cors({ origin: ['http://localhost:3001'] }))
 app.use('/graphql', bodyParser.json(), graphqlExpress({
   schema,
   context: {
